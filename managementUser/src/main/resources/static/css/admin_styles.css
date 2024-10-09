@@ -1,0 +1,111 @@
+/* 공통 스타일 */
+body {
+    font-family: Arial, sans-serif; /* 기본 글꼴 설정 */
+    background-color: #f9f9f9; /* 배경 색상 */
+    color: #333; /* 텍스트 색상 */
+    margin: 0; /* 기본 margin 제거 */
+    padding: 20px; /* 패딩 추가 */
+}
+
+/* 제목 스타일 */
+h1 {
+    text-align: center; /* 가운데 정렬 */
+    color: #e5b266; /* 제목 색상 */
+}
+
+/* 테이블 스타일 */
+table {
+    width: 100%; /* 테이블 너비 100% */
+    border-collapse: collapse; /* 경계 겹침 제거 */
+    margin-top: 20px; /* 위쪽 마진 추가 */
+    border-radius: 8px; /* 테이블 모서리 둥글게 */
+    overflow: hidden; /* 테이블 모서리 둥글게 유지 */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* 그림자 효과 */
+}
+
+th, td {
+    padding: 15px; /* 셀 패딩 */
+    text-align: left; /* 텍스트 왼쪽 정렬 */
+    border-bottom: 1px solid #ddd; /* 하단 경계선 */
+}
+
+th {
+    background-color: #ffcc80; /* 헤더 배경 색상 */
+    color: #5e5c5c; /* 헤더 텍스트 색상 */
+}
+
+/* 클릭 시 행 효과 */
+tr:hover {
+    background-color: #ffe0b2; /* 마우스 호버 시 색상 변경 */
+}
+
+/* 입력 필드 스타일 */
+input[type="text"] {
+    width: 100%; /* 입력 필드 너비 100% */
+    padding: 10px; /* 입력 필드 패딩 */
+    margin-top: 5px; /* 위쪽 마진 추가 */
+    border: 1px solid #ddd; /* 경계선 */
+    border-radius: 5px; /* 둥글게 */
+}
+
+/* 버튼 스타일 */
+button {
+    background-color: #ffcc80; /* 버튼 배경 색상 */
+    color: #fff; /* 버튼 텍스트 색상 */
+    padding: 10px 15px; /* 버튼 패딩 */
+    border: none; /* 경계선 없음 */
+    border-radius: 5px; /* 둥글게 */
+    cursor: pointer; /* 커서 포인터 */
+    transition: background-color 0.3s; /* 부드러운 색상 변화 */
+}
+
+button:hover {
+    background-color: #ffb74d; /* 버튼 호버 색상 */
+}
+
+/* 오류 메시지 스타일 */
+.error-message {
+    color: red; /* 오류 메시지 색상 */
+    margin-top: 10px; /* 위쪽 마진 추가 */
+    display: none; /* 기본적으로 숨김 */
+}
+
+/* 사용자 상세 보기 스타일 */
+.user-detail-table {
+    margin-top: 20px; /* 위쪽 마진 추가 */
+    width: 100%; /* 너비 100% */
+    border-collapse: collapse; /* 경계 겹침 제거 */
+    border-radius: 8px; /* 테이블 모서리 둥글게 */
+    overflow: hidden; /* 테이블 모서리 둥글게 유지 */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* 그림자 효과 */
+}
+
+.user-detail-table th,
+.user-detail-table td {
+    padding: 10px; /* 셀 패딩 */
+    text-align: left; /* 텍스트 왼쪽 정렬 */
+    border-bottom: 1px solid #ddd; /* 하단 경계선 */
+}
+
+.user-detail-table th {
+    background-color: #ffcc80; /* 헤더 배경 색상 */
+}
+
+/* 각 버튼 위치 조정 */
+.user-detail-actions {
+    display: flex; /* Flexbox 사용 */
+    justify-content: space-between; /* 버튼 간격 균등 배치 */
+}
+
+th.user-detail-table-th {
+    width: 20%;
+    text-align: -webkit-center;
+}
+.user-detail-area-btn {
+    text-align: right;
+    margin-top: 20px;
+}
+button.user-detail-btn {
+    width: 20%;
+    margin-left: 10px;
+}

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User List</title>
+    
+    <link rel="stylesheet" href="/css/admin_styles.css"> 
+</head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<body>
+    <h1>User List</h1>
+    
+    <table border="1">
+        <thead>
+            <tr>
+                <th>idx</th>
+                <th>name</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#users}}
+            <tr onclick="showUserDTL(event);">
+                <td>{{id}}</td>
+                <td>{{name}}</td>
+            </tr>
+            {{/users}}
+        </tbody>
+    </table>
+
+    {{^users}}
+    <p>No users found.</p>
+    {{/users}}
+</body>
+<script>
+function showUserDTL(e) {
+		
+		console.log("click");
+		var searchId = parseInt(e.target.parentNode.firstElementChild.textContent);
+		userData = { id: searchId};
+		console.log(userData);
+			$.ajax({
+			                    url: '/admin/userDTL',
+			                    method: 'GET',
+			                    data: userData,
+			                    success: function(data) {
+			                    	window.location.href = '/admin/userDTL?id='+userData.id;
+			                    }
+			                });
+}
+
+</script>
+
+</html>

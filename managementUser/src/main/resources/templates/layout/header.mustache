@@ -1,0 +1,39 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+</head>
+<body>
+	<header id="headerBtList">
+		<button id="logoutBT" onclick="logoutBT();">로그아웃</button>
+
+        <label style="font-size: 13px;">
+            <span style="font-size: 13px; font-weight: 100;">{{id}}</span>님 환영합니다.
+        </label>
+	</header>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script>
+	function logoutBT() {
+		console.log("로그아웃");
+		$.ajax({
+		                    url: '/logout',
+		                    method: 'GET',
+		                    success: function(data) {
+		                    	window.location.href = "/";
+		                    	alert("로그아웃");
+		                    }
+		                });
+				}
+				
+				원
+		function userListBT() {
+			console.log("회원목록조회");
+			window.location.href = "/admin";
+		}
+</script>
+
+</html>

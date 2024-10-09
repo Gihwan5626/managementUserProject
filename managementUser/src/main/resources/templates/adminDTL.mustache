@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User DetailList</title>
+    <link rel="stylesheet" href="/css/admin_styles.css">
+</head>
+<body>
+<h1>회원 상세정보</h1>
+
+{{#user}}
+<table>
+    <tbody>
+    {{#user}}
+    <tr>
+        <th class="user-detail-table-th">idx</th>
+        <td id="id_value">{{id}}</td>
+    </tr>
+    <tr>
+        <th class="user-detail-table-th">ID</th>
+        <td id="username-{{id}}">{{username}}</td>
+    </tr>
+    <tr>
+        <th class="user-detail-table-th">이름</th>
+        <td><input type="text" value="{{name}}" id="name-{{id}}" /></td>
+    </tr>
+    <tr>
+        <th class="user-detail-table-th">권한</th>
+        <td><select name="roll" id="roll-{{id}}">
+            <option value="SYSTEM_USER">일반사용자</option>
+            <option value="SYSTEM_ADMIN">어드민</option>
+        </select></td>
+    </tr>
+    <tr>
+    </tr>
+    {{/user}}
+    </tbody>
+
+
+</table>
+<div class="user-detail-area-btn">
+    <button class="user-detail-btn" onclick="updateUser({{id}})">수정</button>
+    <button class="user-detail-btn" onclick="deleteUser({{id}})">삭제</button>
+</div>
+
+{{/user}}
+
+{{^user}}
+<p>No users found.</p>
+{{/user}}
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+
+    $(document).ready(function() {
+
+        var userData = { id: $("#id_value").text()};
+        console.log(userData);
+        $.ajax({
+            url: '/admin/getRoll',
+            method: 'GET',
+            data: userData,
+            success: function(response) {
+                console.log(response);
+                $("#roll-" + $("#id_value").text()).val(response);
+            },
+            error: function(xhr, status, error) {
+                alert('사용자 정보 수정 중 오류가 발생했습니다.');
+            }
+        });
+    });
+
+    console.log($("#id_value").text());
+    function updateUser(userId) {
+        const id = $("#id_value").text();
+        const username = $('#username-' + userId).text();
+        const name = $('#name-' + userId).val();
+        const roll = $('#roll-' + userId).val();
+        var userData = { id: id, username: username, name: name, roll: roll};
+        // AJAX 요청을 통해 수정된 정보를 서버로 전송
+        $.ajax({
+            url: '/admin/updateUser',
+            method: 'POST',
+            data: userData,
+            success: function(response) {
+                alert('사용자 정보가 수정되었습니다.');
+                // 페이지를 새로 고쳐서 변경 사항 반영 (선택 사항)
+                location.reload();
+            },
+            error: function(xhr, status, error) {
+                alert('사용자 정보 수정 중 오류가 발생했습니다.');
+            }
+        });
+    }
+
+    function deleteUser(userId) {
+        const id = $("#id_value").text();
+        var userData = { id: id};
+        // AJAX 요청을 통해 수정된 정보를 서버로 전송
+        $.ajax({
+            url: '/admin/deleteUser',
+            method: 'POST',
+            data: userData,
+            success: function(response) {
+                alert('사용자 정보가 삭제되었습니다.');
+                window.location.href = '/admin';
+            },
+            error: function(xhr, status, error) {
+                alert('사용자 정보 삭제 중 오류가 발생했습니다.');
+            }
+        });
+    }
+
+</script>
+</html>

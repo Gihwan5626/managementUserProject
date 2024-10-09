@@ -1,0 +1,60 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {{>layout/header}}
+    <title>Main Page</title>
+    <link rel="stylesheet" href="/css/admin_styles.css">
+</head>
+<body>
+
+<hr>
+
+<h1>
+    공지사항
+</h1>
+<div id="bodyBtList">
+
+    <table border="1">
+        <thead>
+        <tr>
+            <th>No</th>
+            <th>제목</th>
+            <th>내용</th>
+            <th>등록일</th>
+        </tr>
+        </thead>
+        <tbody>
+        {{#noticeList}}
+        <tr>
+            <td>{{noticeIdx}}</td>
+            <td>{{title}}</td>
+            <td>{{content}}</td>
+            <td>{{regDt}}</td>
+        </tr>
+        {{/noticeList}}
+        </tbody>
+    </table>
+
+    {{^noticeList}}
+    <p></p>
+    {{/noticeList}}
+</div>
+</body>
+<script>
+    console.log("{{role}}");
+    console.log($("#headerBtList"));
+    if ("{{role}}" == "SYSTEM_ADMIN") {
+        $("#headerBtList").prepend("<button id='userListBT' onclick='userListBT();'>회원목록</button>");
+        $("#bodyBtList").prepend("<button id='insertnotice' onclick='insertnotice();'>게시글작성</button>");
+    }
+
+    function insertnotice() {
+        console.log("게시글 작성");
+        window.location.href = "/insert/notice";
+    }
+
+</script>
+</html>

@@ -1,0 +1,103 @@
+/* 전체 스타일 */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f4f8; /* 부드러운 파스텔 배경 */
+    margin: 0;
+    padding: 0;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #4a4a4a; /* 부드러운 검정색 */
+}
+
+/* 로그인 컨테이너 스타일 */
+.login-container {
+    width: 400px;
+    margin: 100px auto;
+    padding: 40px;
+    background-color: #ffffff; /* 하얀색 배경 */
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* 폼 그룹 스타일 */
+.form-group {
+    margin-bottom: 20px;
+}
+
+/* 레이블 스타일 */
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #555; /* 부드러운 회색 */
+}
+
+/* 입력 필드 스타일 */
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+/* 버튼 스타일 */
+button[type="submit"],
+.submitBT {
+    width: 100%;
+    padding: 9px;
+    background-color: #ffcc80; /* 파스텔 노란색 */
+    color: #fff;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* 부드러운 배경색 변화 */
+    margin-top: 5%;
+}
+
+button[type="submit"]:hover,
+.submitBT:hover {
+    background-color: #ffb74d; /* hover 상태에서 더 어두운 노란색 */
+}
+
+/* 에러 메시지 스타일 */
+.error-message {
+    color: #ff4d4d; /* 에러 메시지 색상 */
+    margin-top: 10px;
+    text-align: center;
+}
+
+/* 회원가입 페이지 스타일 */
+.joinForm {
+    width: 400px;
+    margin: 100px auto;
+    padding: 40px;
+    background-color: #ffffff; /* 하얀색 배경 */
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.noticeForm {
+    width: 400px;
+    margin: 100px auto;
+    padding: 40px;
+    background-color: #ffffff; /* 하얀색 배경 */
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* 입력 필드에 공통 적용 */
+.inputText {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
