@@ -1,22 +1,13 @@
 # 프로젝트 이름
 로그인·로그아웃 및 페이지 구현 & 회원 관리 API (사전과제)
 
-
-<p align="center">
-  <br>
-  <img src="./images/common/logo-sample.jpeg">
-  <br>
-</p>
-
-목차
-
 ## 화면
 <p align="justify">
   로그인
 </p>
 <p align="center">
   <br>
-  <img src="./images/common/login.jpeg">
+  <img src="./images/common/login.png">
   <br>
 </p>
 
@@ -26,7 +17,7 @@
 </p>
 <p align="center">
   <br>
-  <img src="./images/common/main.jpeg">
+  <img src="./images/common/main.png">
   <br>
 </p>
 
@@ -35,7 +26,7 @@
 </p>
 <p align="center">
   <br>
-  <img src="./images/common/userlist.jpeg">
+  <img src="./images/common/userlist.png">
   <br>
 </p>
 
@@ -44,7 +35,7 @@
 </p>
 <p align="center">
   <br>
-  <img src="./images/common/userdetail.jpeg">
+  <img src="./images/common/userdetail.png">
   <br>
 </p>
 
@@ -69,7 +60,7 @@
 </p>
 <p align="center">
   <br>
-  <img src="./images/common/Swagger.jpeg">
+  <img src="./images/common/Swagger.png">
   <br>
 </p>
 
