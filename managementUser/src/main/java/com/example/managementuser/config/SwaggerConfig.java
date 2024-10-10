@@ -3,6 +3,8 @@ package com.example.managementuser.config;
 import io.swagger.v3.oas.models.Components;
 import io.swagger.v3.oas.models.OpenAPI;
 import io.swagger.v3.oas.models.info.Info;
+
+import org.springdoc.core.models.GroupedOpenApi;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -14,6 +16,15 @@ public class SwaggerConfig {
                 .components(new Components())
                 .info(apiInfo());
     }
+    
+    @Bean
+    public GroupedOpenApi userManagementApi() {
+        return GroupedOpenApi.builder()
+                .group("user-management")
+                .pathsToMatch("/management/**") // 경로로 필터링 가능
+                .build();
+    }
+    
 
     private Info apiInfo() {
         return new Info()
